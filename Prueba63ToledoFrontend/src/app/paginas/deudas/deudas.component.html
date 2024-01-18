@@ -1,0 +1,28 @@
+<p>Deudas</p>
+<form>
+  <table>
+    <tr>
+      <td>DNI</td>
+      <td><input type="text" name="txtDni" [(ngModel)]="deudas.dni"></td>
+    </tr>
+  </table>
+  <button (click)='buscar()'>Buscar</button>
+</form>
+
+<hr/>
+
+<table>
+  <tr>
+    <th>Codigo</th>
+    <th>DNI</th>
+    <th>Mes</th>
+    <th>Valor</th>
+  </tr>
+  <tr *ngFor='let deu of deudas | async'>
+    <td>{{deu.id}}</td>
+    <td>{{deu.dni}}</td>
+    <td>{{deu.mes}}</td>
+    <td>{{deu.valor}}</td>
+  </tr>
+</table>
+
